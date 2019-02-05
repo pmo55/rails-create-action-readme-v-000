@@ -10,6 +10,9 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-
-  # add create method here
+  
+  def create
+    Post.create(title: params[:title], description: params[:description])
+    post.save
+  end
 end
